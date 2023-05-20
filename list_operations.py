@@ -12,7 +12,7 @@ def head(input_list):
       'Jan'
     """
 
-    return []
+    return input_list[0]
 
 
 def tail(input_list):
@@ -25,7 +25,7 @@ def tail(input_list):
 
     """
 
-    return []
+    return input_list[1:]
 
 
 def last(input_list):
@@ -38,7 +38,7 @@ def last(input_list):
 
     """
 
-    return []
+    return input_list[-1]
 
 
 def top(input_list):
@@ -51,7 +51,7 @@ def top(input_list):
 
     """
 
-    return []
+    return input_list[0:-1]
 
 
 def first_three(input_list):
@@ -64,7 +64,7 @@ def first_three(input_list):
 
     """
 
-    return []
+    return input_list[:3]
 
 
 def last_five(input_list):
@@ -77,7 +77,7 @@ def last_five(input_list):
 
     """
 
-    return []
+    return input_list[-5:]
 
 
 def middle(input_list):
@@ -90,7 +90,7 @@ def middle(input_list):
 
     """
 
-    return []
+    return input_list[2:-2]
 
 
 def inner_four(input_list):
@@ -103,7 +103,7 @@ def inner_four(input_list):
 
     """
 
-    return []
+    return input_list[2:6]
 
 
 def inner_four_end(input_list):
@@ -119,7 +119,7 @@ def inner_four_end(input_list):
 
     """
 
-    return []
+    return input_list[-6:-2]
 
 
 def replace_head(input_list):
@@ -135,7 +135,7 @@ def replace_head(input_list):
     [42, 3, 6, 9, 12, 15, 18, 21, 24, 27]
 
     """
-
+    input_list[0] = 42
     pass
 
 
@@ -152,7 +152,8 @@ def replace_third_and_last(input_list):
     [0, 3, 37, 9, 12, 15, 18, 21, 24, 37]
 
     """
-
+    input_list[2] = 37
+    input_list[-1] = 37
     pass
 
 
@@ -167,7 +168,7 @@ def backwards(input_list):
     ['May', 'Apr', 'Mar', 'Feb', 'Jan']
 
     """
-
+    return input_list[::-1]
     pass
 
 
@@ -180,7 +181,7 @@ def every_other(input_list):
     ['Jan', 'Mar', 'May']
 
     """
-
+    return input_list[::2]
     pass
 
 
@@ -197,7 +198,9 @@ def delete_third_and_seventh(input_list):
     ['Do', 'Re', 'Fa', 'So', 'La', 'Do']
 
     """
-
+    input_list.pop(2)
+    input_list.pop(5)
+    return
     pass
 
 
@@ -212,7 +215,11 @@ def indices_of_positive_numbers(input_list):
     [0, 2, 3, 6]
 
     """
-
+    positive_nums_indices = []
+    for i, num in enumerate(input_list):
+        if num > 0:
+            positive_nums_indices.append(i)
+    return positive_nums_indices
     pass
 
 
@@ -228,5 +235,10 @@ def sum_repeats(input_list):
     7
 
     """
+    add_together=0
+    for i, num in enumerate(input_list):
+        if num == input_list[i-1]:
+            add_together = add_together + input_list[i]
+    return add_together        
 
     pass
