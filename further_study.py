@@ -12,7 +12,8 @@ def concatenate_new_value(input_list, new_value):
     ['Jan', 'Feb', 'Mar', 'Apr', May', 'Jun', 'Jul']
 
     """
-
+    input_list = input_list + [new_value]
+    return input_list
     pass
 
 
@@ -54,7 +55,7 @@ def replace_middle(input_list):
     [0, 3, 42, 37, 24, 27]
 
     """
-
+    input_list[2:-2] = [42, 37]
     pass
 
 
@@ -73,7 +74,7 @@ def delete_middle(input_list):
     ['Do', 'Re', 'Ti', 'Do']
 
     """
-
+    input_list[2:-2] = []
     pass
 
 
@@ -88,7 +89,11 @@ def double_with_list_comprehension(input_list):
     [2, 4, 6, 8, 10]
     
     """
-
+    list_of_doubled_nums = []
+    for i, num in enumerate(input_list):
+        num = input_list[i] * 2
+        list_of_doubled_nums.append(num)
+    return list_of_doubled_nums
     pass
 
 
